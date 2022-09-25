@@ -37,7 +37,10 @@ def login():
         if request.method == "POST":
             username = request.form["username"]
             password = request.form["password"]
-            a = usernamepass.find_one({"username": username, "password": password})
+            a = usernamepass.find_one({
+                "username": username,
+                "password": password
+            })
             if not a:
                 return render_template("login.html", failed=True)
             else:
@@ -61,7 +64,10 @@ def test_stuff(data):
     coll.insert_one({"username": session["loginname"], "message": data})
     emit(
         "updateData",
-        {"username": session["loginname"], "data": data["data"]},
+        {
+            "username": session["loginname"],
+            "data": data["data"]
+        },
         broadcast=True,
     )
 
