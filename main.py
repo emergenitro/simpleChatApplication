@@ -1,9 +1,9 @@
-from flask import Flask, render_template, url_for, request, redirect, session
+import os
+
+from dotenv import load_dotenv
+from flask import Flask, redirect, render_template, request, session, url_for
 from flask_socketio import SocketIO, emit
 from pymongo import MongoClient
-import os
-from dotenv import load_dotenv
-
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "abcduifhdeuj1234"
