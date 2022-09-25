@@ -1,8 +1,14 @@
 import os
 
 from dotenv import load_dotenv
-from flask import Flask, redirect, render_template, request, session, url_for
-from flask_socketio import SocketIO, emit
+from flask import Flask
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask import session
+from flask import url_for
+from flask_socketio import emit
+from flask_socketio import SocketIO
 from pymongo import MongoClient
 
 app = Flask(__name__)
