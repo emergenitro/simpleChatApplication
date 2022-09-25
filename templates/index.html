@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/logout" class="right-side">Logout</a>
+        <a href="/login" class="right-side">Login</a>
+    </nav>
+    <div class="cont">
+        {%for document in coll%}
+        <p>
+            {{document["username"]}}: {{document["message"]["data"]}}
+        </p>
+        {%endfor%}
+    </div>
+    {%if session['loginname']%}
+    <input type="text" class="inputBox" name="input1"> {%else%}
+    <input type="text" class="inputBox" disabled> {%endif%} {%if session['loginname']%}
+    <script type="text/javascript" charset="utf-8">
+        var socket = io();
+        var input = document.getElementsByClassName("inputBox")[0];
+        input.addEventListener("keypress", function(event) {
+            if (event.key == "Enter") {
+                event.preventDefault();
+                if (input.value != '') {
+                    socket.emit('messagesent', {
+                        data: input.value
+                    })
+                }
+                input.value = '';
+            }
+        });
+    </script>
+    {%endif%}
+    <script type="text/javascript" charset="utf-8">
+        socket.on("updateData", function(data) {
+            document.getElementsByClassName("cont")[0].innerHTML += "<p>" + JSON.stringify(data['username']).replace(/['"]+/g, '') + ": " + JSON.stringify(data["data"]).replace(/['"]+/g, '') + "</p>";
+        });
+    </script>
+</body>
+
+</html>
