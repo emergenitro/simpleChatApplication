@@ -5,8 +5,19 @@ This is a chat application made using Python Flask (and Flask_SocketIO), HTML, C
 ## Basic Overview Functionalities
 
 The image below is the actual chat itself (The first one shows when you're logged out and the second is when you're logged in). This uses MongoDB where I have inserted the data whenever it is entered into the site.
+#### When logged out:
+![image](https://user-images.githubusercontent.com/49610482/195600435-bffee01b-7fc2-4d68-95bf-5659a1cd525a.png)
+
+#### When logged in:
+![image](https://user-images.githubusercontent.com/49610482/195600917-ce256d6f-2fa9-432b-8329-f939b671426a.png)
+
 
 Additionally, the image below shows the register and login page.
+#### Register Page:
+![image](https://user-images.githubusercontent.com/49610482/195601216-9c49cf7b-3db1-42ce-994c-7a4f960649e9.png)
+
+#### Login Page (Design will be changed later, scroll to [Future Plans](#future-plans):
+![image](https://user-images.githubusercontent.com/49610482/195601591-2882ff78-bb58-4280-9522-6849a51c0e8c.png)
 
 ## Relatively advanced backend functionalities
 
