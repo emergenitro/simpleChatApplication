@@ -35,3 +35,8 @@ In the future, I plan to add this onto a portfolio website template that I am wo
 In addition to simple CSS updates, I also plan to add in recaptcha and possibly a multiple group chats sort of thing for easier communication (as this is currently accessible to all).
 
 Lastly, I am planning to add a swear word filter so that we can keep it PG-13.
+
+
+## Bugs
+
+Currently the only prominent bug is no validation on the entries for registration to the database (the registration and login), and so, there would be some conflicts sometimes.
