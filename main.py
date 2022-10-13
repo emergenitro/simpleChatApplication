@@ -20,6 +20,8 @@ a = []
 
 @app.route('/', methods=["GET", "POST"])
 def home_page():
+    if 'loginname' in session:
+        return render_template('index.html', coll=list(coll.find()), usernamething=session["loginname"])
     return render_template('index.html', coll=list(coll.find()))
 
 @app.route('/login', methods=["GET", "POST"])
@@ -66,4 +68,4 @@ def test_stuff(data):
     emit("updateData", {"username" : session['loginname'], "data" : data["data"]}, broadcast=True)
 
 if __name__ ==  '__main__':
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+    socketio.run(app, debug=True)
