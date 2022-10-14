@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "abcduifhdeuj1234"
 socketio = SocketIO(app)
 
-client = MongoClient("mongodb://localhost:27017")
+client = MongoClient("mongodb://hellowhatistheup123:EQM534bGjFk7r2SV@ac-siyibou-shard-00-00.nducqa6.mongodb.net:27017,ac-siyibou-shard-00-01.nducqa6.mongodb.net:27017,ac-siyibou-shard-00-02.nducqa6.mongodb.net:27017/?ssl=true&replicaSet=atlas-mkrclc-shard-0&authSource=admin&retryWrites=true&w=majority")
 
 db = client.get_database("okaycool")
 coll = db.get_collection("messagessent")
