@@ -19,7 +19,7 @@ Additionally, the image below shows the register and login page.
 #### Login Page (Design will be changed later, scroll to [Future Plans](#future-plans):
 ![image](https://user-images.githubusercontent.com/49610482/195601591-2882ff78-bb58-4280-9522-6849a51c0e8c.png)
 
-## Relatively advanced backend functionalities
+## Backend functionalities
 
 The program is encrypted using the SHA256 Cryptographic Encryption Hash, making it impossible for hackers to decrypt the passwords, and is also such that the database admins cannot access the passwords (protecting the users' privacies).
 
